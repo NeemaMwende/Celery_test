@@ -27,6 +27,7 @@ services:
     container_name: app
     build: .
     command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
+    # command: uvicorn main:app --host 0.0.0.0 --port 8000
     volumes:
       - .:/app
     ports:
@@ -37,4 +38,17 @@ services:
 
   redis:
     container_name: redis
-    image: redis:8.6-apline
+    image: redis:8.6-alpine
+
+  celery_worker:
+    container_name: celery_worker
+    build: .
+    command: celery -A celery_worker.celery worker --loglevel=info
+    volumes:
+      - .:/app
+    environment:
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND}
+    depends_on:
+      - app
+      - redis
