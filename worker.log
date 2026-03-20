@@ -540,3 +540,5 @@ INFO:rq.worker:Successfully completed job.print_number(1, 5) job in 0:00:00.0243
 INFO:rq.worker:task_queue: Job OK (6a0837f3-34fe-4afc-8c7b-d86cf8ecc819)
 17:05:36 Result is kept for 500 seconds
 INFO:rq.worker:Result is kept for 500 seconds
+17:12:21 Worker d4f4e1c996a646548532659922b1e1f3: cleaning registries for queue: task_queue
+17:25:52 Worker d4f4e1c996a646548532659922b1e1f3: cleaning registries for queue: task_queue
