@@ -3,12 +3,12 @@ from datetime import timedelta
 import bcrypt
 import graphene
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from graphql import GraphQLError
 from jwt import PyJWTError
-from starlette.graphql import GraphQLApp
 
 import models
-from db_conf import db_session
+from Authentication.db_conf import db_session
 from jwt_token import create_access_token, decode_access_token
 from schemas import PostModel, PostSchema, UserSchema
 
@@ -35,8 +35,8 @@ class AuthenticateUser(graphene.Mutation):
         username = graphene.String(required=True)
         password = graphene.String(required=True)
 
-    ok = graphene.Boolean()
-    token = graphene.String()
+    ok = graphene.Boolean() #indicates success or failure
+    token = graphene.String() #jwt access token on success
 
     @staticmethod
     def mutate(root, info, username, password):
@@ -55,6 +55,7 @@ class AuthenticateUser(graphene.Mutation):
 
         db_user_info = db.query(models.User).filter(models.User.username == username).first()
 
+        # if correct generate jwt (create_access_token) and token otherwise dont
         if bcrypt.checkpw(user.password.encode("utf-8"), db_user_info.password.encode("utf-8")):
             access_token_expires = timedelta(minutes=60)
             access_token = create_access_token(data={"user": username}, expires_delta=access_token_expires)

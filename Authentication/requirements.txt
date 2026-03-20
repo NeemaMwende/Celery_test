@@ -1,18 +1,18 @@
 
-# User authentication packages - latest compatible versions
+# User authentication packages
 alembic
 aniso8601
 appdirs
 asgiref
 bcrypt
 black
-colorama
+celery
 cryptography
 fastapi
-graphene
-graphene-sqlalchemy
-graphql-core
-graphql-relay
+graphene==2.1.9
+graphene-sqlalchemy==2.1.0
+graphql-core==2.3.2
+graphql-relay==2.0.1
 greenlet
 h11
 Mako
@@ -33,6 +33,7 @@ singledispatch
 six
 SQLAlchemy
 starlette
+starlette-graphql
 toml
 typing-extensions
-uvicorn
+uvicorn>=0.15.0
