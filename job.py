@@ -6,11 +6,15 @@
 #         x = x+1
 #     print("==End==")
 
-# job.py - return instead of print
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
 def print_number(lowest, highest):
-    result = []
+    logging.info("==job processing started ==")
     x = lowest 
     while x <= highest:
-        result.append(x)
+        logging.info("Number: {}", x)
         x = x+1
-    return result
+    logging.info("==End==")
+    return list(range(lowest, highest + 1))

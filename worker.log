@@ -1,0 +1,542 @@
+17:01:42 Worker d4f4e1c996a646548532659922b1e1f3: started with PID 26399, version 2.7.0
+17:01:42 Worker d4f4e1c996a646548532659922b1e1f3: subscribing to channel rq:pubsub:d4f4e1c996a646548532659922b1e1f3
+17:01:42 *** Listening on task_queue...
+17:01:42 Worker d4f4e1c996a646548532659922b1e1f3: cleaning registries for queue: task_queue
+17:01:42 task_queue: job.print_number(1, 5) (219651a1-8913-431c-b118-a021e5e112fc)
+INFO:root:==job processing started ==
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (2,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (3,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (4,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (5,)
+INFO:root:==End==
+17:01:42 Successfully completed job.print_number(1, 5) job in 0:00:00.003342s on worker d4f4e1c996a646548532659922b1e1f3
+INFO:rq.worker:Successfully completed job.print_number(1, 5) job in 0:00:00.003342s on worker d4f4e1c996a646548532659922b1e1f3
+17:01:42 task_queue: Job OK (219651a1-8913-431c-b118-a021e5e112fc)
+INFO:rq.worker:task_queue: Job OK (219651a1-8913-431c-b118-a021e5e112fc)
+17:01:42 Result is kept for 500 seconds
+INFO:rq.worker:Result is kept for 500 seconds
+17:05:36 task_queue: job.print_number(1, 5) (6a0837f3-34fe-4afc-8c7b-d86cf8ecc819)
+INFO:root:==job processing started ==
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (1,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (2,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (3,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (4,)
+--- Logging error ---
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/logging/__init__.py", line 1160, in emit
+    msg = self.format(record)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 999, in format
+    return fmt.format(record)
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 703, in format
+    record.message = record.getMessage()
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/logging/__init__.py", line 392, in getMessage
+    msg = msg % self.args
+          ~~~~^~~~~~~~~~~
+TypeError: not all arguments converted during string formatting
+Call stack:
+  File "/home/neema/Agentic_rag/venv/bin/rq", line 8, in <module>
+    sys.exit(main())
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1485, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1406, in main
+    rv = self.invoke(ctx)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1873, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 1269, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/helpers.py", line 425, in wrapper
+    return ctx.invoke(func, cli_config, *args[1:], **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/click/core.py", line 824, in invoke
+    return callback(*args, **kwargs)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/cli/workers.py", line 160, in worker
+    worker_instance.work(
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 615, in work
+    self.execute_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 152, in execute_job
+    self.fork_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/worker_classes.py", line 65, in fork_work_horse
+    self.main_work_horse(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1534, in main_work_horse
+    self.perform_job(job, queue)
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/worker/base.py", line 1463, in perform_job
+    return_value = job.perform()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1318, in perform
+    self._result = self._execute()
+  File "/home/neema/Agentic_rag/venv/lib/python3.12/site-packages/rq/job.py", line 1378, in _execute
+    result = self.func(*self.args, **self.kwargs)
+  File "/home/neema/Agentic_rag/job.py", line 17, in print_number
+    logging.info("Number: {}", x)
+Message: 'Number: {}'
+Arguments: (5,)
+INFO:root:==End==
+17:05:36 Successfully completed job.print_number(1, 5) job in 0:00:00.024342s on worker d4f4e1c996a646548532659922b1e1f3
+INFO:rq.worker:Successfully completed job.print_number(1, 5) job in 0:00:00.024342s on worker d4f4e1c996a646548532659922b1e1f3
+17:05:36 task_queue: Job OK (6a0837f3-34fe-4afc-8c7b-d86cf8ecc819)
+INFO:rq.worker:task_queue: Job OK (6a0837f3-34fe-4afc-8c7b-d86cf8ecc819)
+17:05:36 Result is kept for 500 seconds
+INFO:rq.worker:Result is kept for 500 seconds
