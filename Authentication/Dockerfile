@@ -1,4 +1,4 @@
-FROM python:3.9.6-slim-buster 
+FROM python:3.11-slim 
 ENV PYTHONUNBUFFERED=1 
 WORKDIR /Authentication
 COPY requirements.txt requirements.txt   

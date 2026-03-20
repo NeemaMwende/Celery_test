@@ -1,7 +1,7 @@
 from sqlalchemy import Column, DateTime, Integer, String 
 from sqlalchemy.sql import func 
 
-from Authentication.db_conf import Base 
+from db_conf import Base 
 
 # Models define the database schema. Alembic can use them to generate migrations automatically via alembic revision --autogenerate.
 class Post(Base):

@@ -1,5 +1,5 @@
 
-# User authentication packages
+# User authentication packages - for Python 3.11
 alembic
 aniso8601
 appdirs
