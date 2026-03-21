@@ -2,11 +2,11 @@ from datetime import timedelta
 
 import bcrypt
 import graphene
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse, PlainTextResponse
 from graphql import GraphQLError
 from jwt import PyJWTError
-from fastapi.responses import JSONResponse
 
 import models
 from db_conf import db_session
@@ -150,4 +150,29 @@ class PostMutations(graphene.ObjectType):
     create_new_post = CreateNewPost.Field()
 
 
-app.add_route("/graphql", GraphQLApp(schema=graphene.Schema(query=Query, mutation=PostMutations)))
+schema = graphene.Schema(query=Query, mutation=PostMutations)
+
+@app.get("/graphql", include_in_schema=False)
+async def graphql_get(request: Request):
+    query = request.query_params.get("query")
+    variables = request.query_params.get("variables")
+    operation_name = request.query_params.get("operationName")
+    
+    if query:
+        result = schema.execute(query, variables=variables, operation_name=operation_name)
+        if result.errors:
+            return JSONResponse({"errors": [{"message": str(e)} for e in result.errors]}, status_code=400)
+        return JSONResponse(result.data)
+    return PlainTextResponse("GET query not provided")
+
+@app.post("/graphql", include_in_schema=False)
+async def graphql_post(request: Request):
+    body = await request.json()
+    query = body.get("query")
+    variables = body.get("variables")
+    operation_name = body.get("operationName")
+    
+    result = schema.execute(query, variables=variables, operation_name=operation_name)
+    if result.errors:
+        return JSONResponse({"errors": [{"message": str(e)} for e in result.errors]}, status_code=400)
+    return JSONResponse(result.data)
